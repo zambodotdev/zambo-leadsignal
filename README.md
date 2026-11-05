@@ -1,5 +1,8 @@
 # zambo-leadsignal
 
+[![Zambo receipt: hash matches](https://zambo.dev/api/receipt/dcbecd9b-eab7-49b4-8994-2481517af299/badge.svg)](https://zambo.dev/run/dcbecd9b-eab7-49b4-8994-2481517af299)
+
+
 Run a lead signal sweep for a local trade market: live signals,
 screened input, your own prior record checked before you write the
 brief, and a verifiable AER-1 receipt for every step.
