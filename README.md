@@ -22,10 +22,14 @@ Python:
     pip install zambo-leadsignal
     zambo-leadsignal run --trade plumber --city "Austin Texas"
 
+PyPI: https://pypi.org/project/zambo-leadsignal/
+
 Node:
 
     npm install zambo-leadsignal
     npx zambo-leadsignal run --trade plumber --city "Austin Texas"
+
+npm: https://www.npmjs.com/package/zambo-leadsignal
 
 ## What a run does
 
@@ -68,6 +72,10 @@ https://zambo.dev/add/
   identity per agent; the caller handle issued at initialize is saved
   under ./.zambo-leadsignal and reused on later runs.
 - ZAMBO_MCP_URL: endpoint override (default: https://zambo.dev/mcp).
+
+## The pattern family
+
+The pattern family: https://rambozambodotdev.gitlab.io/aer1-hub/the-pattern-family.html
 
 ## License
 
