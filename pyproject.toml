@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zambo-leadsignal"
-version = "1.0.3"
+version = "1.0.4"
 description = "Run a lead signal sweep for a local trade market on Zambo: live signals, screened input, continuity-checked, brief written, every step on a verifiable AER-1 receipt."
 readme = "README.md"
 requires-python = ">=3.9"

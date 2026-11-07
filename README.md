@@ -73,6 +73,10 @@ https://zambo.dev/add/
   under ./.zambo-leadsignal and reused on later runs.
 - ZAMBO_MCP_URL: endpoint override (default: https://zambo.dev/mcp).
 
+## Where this pattern runs live: Zambo
+
+zambo-leadsignal runs on Zambo, the verifiable work layer for AI: 153 tools behind one MCP endpoint (https://zambo.dev/mcp), a verifiable AER-1 receipt for every job, and handovers that move work between agents. Connect any AI to the live endpoint at https://zambo.dev/mcp or add Zambo to your AI in one step at https://zambo.dev/add/
+
 ## License
 
 MIT. Built by Brennan Zambo (brennanzambo@zambo.dev).
