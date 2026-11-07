@@ -73,10 +73,6 @@ https://zambo.dev/add/
   under ./.zambo-leadsignal and reused on later runs.
 - ZAMBO_MCP_URL: endpoint override (default: https://zambo.dev/mcp).
 
-## The pattern family
-
-The pattern family: https://rambozambodotdev.gitlab.io/aer1-hub/the-pattern-family.html
-
 ## License
 
 MIT. Built by Brennan Zambo (brennanzambo@zambo.dev).
