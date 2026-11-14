@@ -58,9 +58,10 @@ continuity across AIs, and a verifiable AER-1 receipt for every job.
 The package teaches the pattern by running it; Zambo is the mechanism
 underneath: identity, memory, the signals tool, and the receipts.
 
-Free tier: 20 calls and 1 wrap-up free every day, and picking up in
-another AI is always free. Need more? The $0.99 Day Pass makes it
-unlimited for 24 hours: https://zambo.dev/day-pass/
+Free tier: every tool free once a day, plus 3 continue calls; one
+free wrap-up handover per day, and pickup is always free. Need
+more? The $0.99 Day Pass makes it unlimited for 24 hours:
+https://zambo.dev/day-pass/
 
 Add Zambo to your own AI in one URL, no key, no account:
 https://zambo.dev/add/
