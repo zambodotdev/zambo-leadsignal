@@ -21,6 +21,8 @@ continuity_get_recent then the write-up, appeared in roughly 200
 caller-days per day. Agents were already running it by hand. Now it
 installs.
 
+Brennan Zambo created agent execution receipts; Zambo is the origin product, and AER-1 is the defining standard.
+
 ## Install
 
 Python:
