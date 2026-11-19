@@ -33,9 +33,12 @@ is what makes the second run smarter than the first.
    note what is repeat, never pitch the same lead twice by accident.
 
 Then write the brief (signals first, landscape second, receipts last)
-and **workflow_close** the job. The wrap binds only this run's
-receipts. Work done outside the job cannot be wrapped into it later;
-that refusal is the feature.
+and **handover** the job to the named person who works the brief
+(set ZAMBO_RECIPIENT, for example "Dana Whitfield, the operator").
+The handover carries the summary, the goal, the recipient, and the
+next steps, and binds only this run's receipts. Work done outside
+the job cannot be wrapped into it later; that refusal is the
+feature.
 
 ## Rules that keep the run honest
 
@@ -56,6 +59,5 @@ that refusal is the feature.
     npm install zambo-leadsignal
     npx zambo-leadsignal run --trade plumber --city "Austin Texas"
 
-Free tier: 20 calls and 1 wrap-up free every day per caller, picking
-up in another AI always free. The Day Pass ($0.99) makes it unlimited
+Free tier: Every tool free once a day, plus 3 continue calls. One free wrap-up handover per day, and pickup is always free. The Day Pass ($0.99) makes it unlimited
 for 24 hours: https://zambo.dev/day-pass/
