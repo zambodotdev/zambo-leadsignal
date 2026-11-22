@@ -9,7 +9,7 @@ function slug(text) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
 }
 
-async function runSweep(trade, city, note, agentId, agentName) {
+async function runSweep(trade, city, note, agentId, agentName, recipient) {
   agentId = agentId || "leadsignal-agent";
   agentName = agentName || "Lead Signal Agent";
   const stamp = new Date().toISOString().replace(/[-:T]/g, "").slice(0, 14);
@@ -35,17 +35,26 @@ async function runSweep(trade, city, note, agentId, agentName) {
   const recent = await step("continuity_get_recent", { limit: 20 });
 
   const receiptLines = Object.entries(receipts).filter(([, u]) => u).map(([t, u]) => `- ${t}: ${u}`).join("\n");
-  const brief = `# Lead signal brief: ${trade} in ${city}\n\nJob: ${jobId} (UTC ${stamp})\n\n## Live signals (leadsignal)\n\n${signals}\n\n## Capability landscape (capability_search)\n\n${landscape}\n\n## Input screen (prompt_shield)\n\n${shield}\n\n## What this agent already had on record (continuity)\n\n${recent}\n\n## Receipts\n\n${receiptLines}\n\nEvery receipt recomputes at https://zambo.dev/verify/. A receipt proves the saved result was not changed since the call ran; it does not prove a lead is good. Work the signals, and let the record keep you honest about what you already chased.\n`;
+  const brief = `# Lead signal brief: ${trade} in ${city}\n\nJob: ${jobId} (UTC ${stamp})\n\n## Live signals (leadsignal)\n\n${signals}\n\n## Capability landscape (capability_search)\n\n${landscape}\n\n## Input screen (prompt_shield)\n\n${shield}\n\n## What this agent already had on record (continuity)\n\n${recent}\n\n## Receipts\n\n${receiptLines}\n\nEvery receipt recomputes at https://zambo.dev/verify/. A receipt proves the saved result was not changed since the call ran; it does not prove a lead is good. Work the signals, and let the record keep you honest about what you already chased.\n\nShare this brief with your referral link from https://zambo.dev/add/ : when a paid Day Pass activates through your link, you receive 2,000 bonus calls.\n`;
   const out = path.join(process.cwd(), `leadsignal-brief-${jobId}.md`);
   fs.writeFileSync(out, brief);
   console.log(`[brief] written: ${out}`);
 
-  const wrap = await client.callTool("workflow_close", {
+  const wrap = await client.callTool("handover", {
     _session_id: jobId,
     summary: `Lead signal run for ${trade} in ${city}: live signals pulled, input screened, prior record checked, brief written to ${path.basename(out)}.`,
+    goal: `Work the ${trade} leads in ${city} from the brief and book the first job.`,
+    recipient: recipient || "the operator",
+    next_steps: [
+      "Open the brief and work the live signals first.",
+      "Recheck any receipt at https://zambo.dev/verify/ before pitching a lead as proven.",
+      "Run the sweep again next week; continuity makes the second run build on this record.",
+    ],
   });
   const wrapLink = receiptLink(wrap);
-  console.log(`[wrap] workflow_close receipt: ${wrapLink}`);
+  console.log(`[wrap] handover receipt: ${wrapLink}`);
+  console.log("[wrap] every receipt above recomputes free at https://zambo.dev/verify/");
+  console.log("[wrap] referral: share your link from https://zambo.dev/add/ and a paid Day Pass activated through it earns you 2,000 bonus calls");
   return { job_id: jobId, brief: out, receipts, wrap_receipt: wrapLink };
 }
 

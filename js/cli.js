@@ -2,7 +2,7 @@
 "use strict";
 /* zambo-leadsignal command line.
  *   zambo-leadsignal run --trade plumber --city "Austin Texas" [--note "..."]
- * Env: ZAMBO_TRADE, ZAMBO_CITY, ZAMBO_NOTE, ZAMBO_AGENT_ID, ZAMBO_MCP_URL. */
+ * Env: ZAMBO_TRADE, ZAMBO_CITY, ZAMBO_NOTE, ZAMBO_RECIPIENT, ZAMBO_AGENT_ID, ZAMBO_MCP_URL. */
 const { runSweep } = require("./run");
 
 function arg(flag, env, dflt) {
@@ -19,11 +19,12 @@ async function main() {
   const trade = arg("--trade", "ZAMBO_TRADE");
   const city = arg("--city", "ZAMBO_CITY");
   const note = arg("--note", "ZAMBO_NOTE");
+  const recipient = arg("--recipient", "ZAMBO_RECIPIENT");
   if (!trade || !city) {
     console.log("run needs --trade and --city (or ZAMBO_TRADE / ZAMBO_CITY)");
     return 2;
   }
-  const result = await runSweep(trade, city, note, process.env.ZAMBO_AGENT_ID);
+  const result = await runSweep(trade, city, note, process.env.ZAMBO_AGENT_ID, undefined, recipient);
   console.log(`done: job ${result.job_id}`);
   return 0;
 }
