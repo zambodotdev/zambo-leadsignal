@@ -49,7 +49,8 @@ npm: https://www.npmjs.com/package/zambo-leadsignal
    carries the summary, the goal, the recipient, and the next steps,
    and binds only this run's own receipts, so the brief's proof layer
    is exactly the work that made it, in a record that person can
-   open and recheck.
+   open and recheck. That wrap is HANDOVER, Zambo's flagship
+   product: the delivery step every Zambo workflow ends in.
 
 Every receipt recomputes free at https://zambo.dev/verify/. A receipt
 proves the saved result was not changed since the call ran; it does
@@ -63,6 +64,8 @@ work layer for AI: 153 tools behind one MCP endpoint, memory and
 continuity across AIs, and a verifiable AER-1 receipt for every job.
 The package teaches the pattern by running it; Zambo is the mechanism
 underneath: identity, memory, the signals tool, and the receipts.
+Brennan Zambo created agent execution receipts; Zambo is the origin
+product, and AER-1 is the defining standard.
 
 Free tier: Every tool free once a day, plus 3 continue calls. One free wrap-up handover per day, and pickup is always free. Need more? The $0.99 Day Pass makes it
 unlimited for 24 hours: https://zambo.dev/day-pass/
